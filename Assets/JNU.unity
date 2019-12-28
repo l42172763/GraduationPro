@@ -506,6 +506,26 @@ PrefabInstance:
       propertyPath: _anchor
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114938245402035704, guid: 1d5b38d6100aa5f4ab43c7577e6ee77c,
+        type: 3}
+      propertyPath: axisX.showSimulatinInspector
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938245402035704, guid: 1d5b38d6100aa5f4ab43c7577e6ee77c,
+        type: 3}
+      propertyPath: axisY.showSimulatinInspector
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938245402035704, guid: 1d5b38d6100aa5f4ab43c7577e6ee77c,
+        type: 3}
+      propertyPath: showPressEventInspector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938245402035704, guid: 1d5b38d6100aa5f4ab43c7577e6ee77c,
+        type: 3}
+      propertyPath: tmAdditionnalRotation
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 224503566088442624, guid: 1d5b38d6100aa5f4ab43c7577e6ee77c,
         type: 3}
       propertyPath: m_AnchorMin.x

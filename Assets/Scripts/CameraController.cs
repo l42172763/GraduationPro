@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Local Player");
         target = player.transform;
+        transform.position = target.position + offset;
+        transform.LookAt(target);
     }
 
     // Update is called once per frame
@@ -19,37 +21,34 @@ public class CameraController : MonoBehaviour
     {
         Rotate();
         Scale();
-
         transform.position = target.position + offset;
-        transform.LookAt(target);
+
     }
     //缩放
     private void Scale()
     {
-        float dis = offset.magnitude;
-        dis += Input.GetAxis("Mouse ScrollWheel") * 60;
-        Debug.Log("dis=" + dis);
-        if (dis < 40) dis = 40;
-        if(dis>500) dis = 500;
-        offset = offset.normalized * dis;
+        float distance = offset.magnitude;
+        distance += Input.GetAxis("Mouse ScrollWheel") * 60;
+        Debug.Log("distance=" + distance);
+        distance=Mathf.Clamp(distance,40, 500);
+        offset = offset.normalized * distance;
     }
     //左右上下移动
     private void Rotate()
     {
         if (Input.GetMouseButton(1))
         {
-            Vector3 pos = transform.position;
-            Vector3 rot = transform.eulerAngles;
 
             //围绕原点旋转，也可以将Vector3.zero改为 target.position,就是围绕观察对象旋转
-            transform.RotateAround(target.position, Vector3.up, Input.GetAxis("Mouse X") * 20);
-            transform.RotateAround(target.position, Vector3.left, Input.GetAxis("Mouse Y") * 20);
+            transform.RotateAround(target.position, target.up, Input.GetAxis("Mouse X") * 20);
+
+            Vector3 pos = transform.position;
+            Vector3 rot = transform.eulerAngles;
+            transform.RotateAround(target.position, target.right, -Input.GetAxis("Mouse Y") * 20);
             float x = transform.eulerAngles.x;
             float y = transform.eulerAngles.y;
-            Debug.Log("x=" + x);
-            Debug.Log("y=" + y);
             //控制移动范围
-            if (x >60)
+            if (x < 10 || x > 60)
             {
                 transform.position = pos;
                 transform.eulerAngles = rot;
