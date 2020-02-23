@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonSettings : MonoBehaviour
 {
-    public GameObject t;
-    public CameraController cc;
+    //重置相机使用变量
+    private GameObject t;
+    private CameraController cc;
+    //以上为重置相机
+
+    
     //切换场景
     public void LoadSettingsInGaming()
     {
@@ -36,28 +40,4 @@ public class ButtonSettings : MonoBehaviour
         cc = t.GetComponent<CameraController>();
         cc.CameraReset(0,0);
     }
-    /*public void CameraLeft()
-    {
-        t = GameObject.FindGameObjectWithTag("MainCamera");
-        cc = t.GetComponent<CameraController>();
-        cc.CameraReset(1);
-    }
-    public void CameraRight()
-    {
-        t = GameObject.FindGameObjectWithTag("MainCamera");
-        cc = t.GetComponent<CameraController>();
-        cc.CameraReset(2);
-    }
-    public void CameraUp()
-    {
-        t = GameObject.FindGameObjectWithTag("MainCamera");
-        cc = t.GetComponent<CameraController>();
-        cc.CameraReset(3);
-    }
-    public void CameraDown()
-    {
-        t = GameObject.FindGameObjectWithTag("MainCamera");
-        cc = t.GetComponent<CameraController>();
-        cc.CameraReset(4);
-    }*/
 }
