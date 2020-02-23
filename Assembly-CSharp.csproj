@@ -66,7 +66,6 @@
     <Compile Include="Assets\NewAssets\Scripts\ButtonSettings.cs" />
     <Compile Include="Assets\NewAssets\Scripts\CameraController.cs" />
     <Compile Include="Assets\NewAssets\Scripts\GetInput.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\LongButtonDown.cs" />
     <Compile Include="Assets\NewAssets\Scripts\SeeYourPassword.cs" />
     <Compile Include="Assets\PreSettledAssets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\AutoSelect\MultiLayerTouch.cs" />
