@@ -10,8 +10,12 @@ public class ButtonSettings : MonoBehaviour
     private CameraController cc;
     //以上为重置相机
 
-    
+
     //切换场景
+    public void InGaming()
+    {
+        SceneManager.LoadScene("InGaming");
+    }
     public void LoadSettingsInGaming()
     {
         SceneManager.LoadScene("SettingsInGaming");
