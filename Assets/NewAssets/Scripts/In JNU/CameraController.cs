@@ -80,8 +80,8 @@ public class CameraController : MonoBehaviour
         {
 
             //围绕原点旋转，也可以将Vector3.zero改为 target.position,就是围绕观察对象旋转
-            transform.RotateAround(target.position, target.up, Input.GetAxis("Mouse X") * 5);
-            transform.RotateAround(target.position, transform.right, -Input.GetAxis("Mouse Y") * 5);
+            transform.RotateAround(target.position, target.up, Input.GetAxis("Mouse X") * 3);
+            transform.RotateAround(target.position, transform.right, -Input.GetAxis("Mouse Y") * 3);
             //上一行将target.right修改为transform.right解决了视角切换的问题
             Vector3 pos = transform.position;
             Vector3 rot = transform.eulerAngles;
