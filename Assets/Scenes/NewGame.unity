@@ -299,7 +299,6 @@ GameObject:
   - component: {fileID: 645675750}
   - component: {fileID: 645675753}
   - component: {fileID: 645675752}
-  - component: {fileID: 645675756}
   - component: {fileID: 645675751}
   - component: {fileID: 645675754}
   - component: {fileID: 645675755}
@@ -454,27 +453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b27082f11780c84994527c4ee95195f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &645675756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645675749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b74285ae5e1df469ecc18c9afcfdba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: "\u6211\u5C31\u4E0D\u544A\u8BC9\u4F60\u8FD9\u4E48\u505A"
-  inpf: {fileID: 0}
-  text: {fileID: 0}
-  tt: 
-  StudentNumIn: {fileID: 0}
-  MajorIn: {fileID: 0}
-  PasswordIn: {fileID: 0}
-  Database: {fileID: 0}
-  BS: {fileID: 0}
 --- !u!1 &731229816
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +624,6 @@ GameObject:
   - component: {fileID: 836086871}
   - component: {fileID: 836086875}
   - component: {fileID: 836086874}
-  - component: {fileID: 836086877}
   - component: {fileID: 836086872}
   - component: {fileID: 836086873}
   - component: {fileID: 836086876}
@@ -803,27 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b27082f11780c84994527c4ee95195f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &836086877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836086870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b74285ae5e1df469ecc18c9afcfdba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: "\u6211\u5C31\u4E0D\u544A\u8BC9\u4F60\u8FD9\u4E48\u505A"
-  inpf: {fileID: 0}
-  text: {fileID: 0}
-  tt: 
-  StudentNumIn: {fileID: 0}
-  MajorIn: {fileID: 0}
-  PasswordIn: {fileID: 0}
-  Database: {fileID: 0}
-  BS: {fileID: 0}
 --- !u!1 &854940471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,14 +1351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b74285ae5e1df469ecc18c9afcfdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: "\u6211\u5C31\u4E0D\u544A\u8BC9\u4F60\u8FD9\u4E48\u505A"
-  inpf: {fileID: 0}
-  text: {fileID: 0}
-  tt: 
   StudentNumIn: {fileID: 0}
   MajorIn: {fileID: 0}
   PasswordIn: {fileID: 0}
-  Database: {fileID: 0}
   BS: {fileID: 0}
 --- !u!1 &1410817468
 GameObject:
@@ -2194,7 +2145,6 @@ GameObject:
   - component: {fileID: 2047224771}
   - component: {fileID: 2047224775}
   - component: {fileID: 2047224774}
-  - component: {fileID: 2047224777}
   - component: {fileID: 2047224773}
   - component: {fileID: 2047224772}
   - component: {fileID: 2047224776}
@@ -2349,24 +2299,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b27082f11780c84994527c4ee95195f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2047224777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047224770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b74285ae5e1df469ecc18c9afcfdba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: "\u6211\u5C31\u4E0D\u544A\u8BC9\u4F60\u8FD9\u4E48\u505A"
-  inpf: {fileID: 0}
-  text: {fileID: 0}
-  tt: 
-  StudentNumIn: {fileID: 0}
-  MajorIn: {fileID: 0}
-  PasswordIn: {fileID: 0}
-  Database: {fileID: 0}
-  BS: {fileID: 0}
