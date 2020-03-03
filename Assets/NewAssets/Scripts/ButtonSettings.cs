@@ -16,10 +16,6 @@ public class ButtonSettings : MonoBehaviour
     {
         SceneManager.LoadScene("InGaming");
     }
-    public void LoadSettingsInGaming()
-    {
-        SceneManager.LoadScene("SettingsInGaming");
-    }
     public void StartNewGame()
     {
         SceneManager.LoadScene("NewGame");
