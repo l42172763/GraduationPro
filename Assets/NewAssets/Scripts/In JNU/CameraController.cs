@@ -19,8 +19,8 @@ public class CameraController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        sensitivityX=1f;//镜头移动速度--左右
-        sensitivityY =1f;//镜头移动速度--上下
+        sensitivityX=0.1f;//镜头移动速度--左右
+        sensitivityY =0.1f;//镜头移动速度--上下
         minimumY = -30F;//镜头移动范围--下
         maximumY = 10F;//镜头移动范围--上
         lookJoystick = ETCInput.GetControlJoystick("CameraJoystick");

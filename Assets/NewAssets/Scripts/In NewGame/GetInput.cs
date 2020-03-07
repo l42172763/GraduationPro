@@ -10,7 +10,6 @@ public class GetInput : MonoBehaviour
     {
         transform.GetComponent<InputField>().onValueChanged.AddListener(Changed_Value);
         transform.GetComponent<InputField>().onEndEdit.AddListener(End_Value);
-
     }
 
     public void Changed_Value(string inp)
