@@ -8,21 +8,45 @@ public class mytxtIO : MonoBehaviour
     StreamWriter writer;
     StreamReader reader;
 
-    List<int> Allmytxt = new List<int>();
-    // Use this for initialization
+    List<int> Allmyint = new List<int>();
+    List<string> Allmystring = new List<string>();
     void Start()
     {
-        FileInfo file = new FileInfo(Application.dataPath + "/mytxt.txt");
-        if (file.Exists)
+        FileInfo intfile = new FileInfo(Application.dataPath + "/myint.txt");
+        if (intfile.Exists)
         {
-            file.Delete();
-            file.Refresh();
+            intfile.Delete();
+            intfile.Refresh();
         }
+        else intfile.Create();
+        FileInfo stringfile = new FileInfo(Application.dataPath + "/mystring.txt");
+        if (stringfile.Exists)
+        {
+            stringfile.Delete();
+            stringfile.Refresh();
+        }
+        else stringfile.Create();
     }
     //把所有的数据写入文本中
-    public void WriteIntoTxt(string message)
+    public void WriteIntoIntTxt(string message)
     {
-        FileInfo file = new FileInfo(Application.dataPath + "/mytxt.txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/myint.txt");
+        if (!file.Exists)
+        {
+            writer = file.CreateText();
+        }
+        else
+        {
+            writer = file.AppendText();
+        }
+        writer.WriteLine(message);
+        writer.Flush();
+        writer.Dispose();
+        writer.Close();
+    }
+    public void WriteIntoStringTxt(string message)
+    {
+        FileInfo file = new FileInfo(Application.dataPath + "/mystring.txt");
         if (!file.Exists)
         {
             writer = file.CreateText();
@@ -37,14 +61,26 @@ public class mytxtIO : MonoBehaviour
         writer.Close();
     }
     //读取分数 存储到列表中
-    public void ReadOutTxt()
+    public void ReadOutInt()
     {
-        Allmytxt.Clear();
-        reader = new StreamReader(Application.dataPath + "/mytxt.txt", Encoding.UTF8);
+        Allmyint.Clear();
+        reader = new StreamReader(Application.dataPath + "/myint.txt", Encoding.UTF8);
         string text;
         while ((text = reader.ReadLine()) != null)
         {
-            Allmytxt.Add(int.Parse(text));
+            Allmyint.Add(int.Parse(text));
+        }
+        reader.Dispose();
+        reader.Close();
+    }
+    public void ReadOutString()
+    {
+        Allmyint.Clear();
+        reader = new StreamReader(Application.dataPath + "/mystring.txt", Encoding.UTF8);
+        string text;
+        while ((text = reader.ReadLine()) != null)
+        {
+            Allmystring.Add(text);
         }
         reader.Dispose();
         reader.Close();
@@ -53,10 +89,15 @@ public class mytxtIO : MonoBehaviour
     /// 获取从列表读取数据之后的List
     /// </summary>
     /// <returns></returns>
-    public List<int> GetmytxtList()
+    public List<int> GetmyIntList()
     {
-        ReadOutTxt();
-        return Allmytxt;
+        ReadOutInt();
+        return Allmyint;
+    }
+    public List<string> GetmyStringList()
+    {
+        ReadOutString();
+        return Allmystring;
     }
 
 }
