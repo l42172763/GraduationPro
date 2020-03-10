@@ -3,34 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text;
-public class mytxtIO : MonoBehaviour
+public static class mytxtIO
 {
-    StreamWriter writer;
-    StreamReader reader;
+    private static StreamWriter writer;
+    private static StreamReader reader;
 
-    List<int> Allmyint = new List<int>();
-    List<string> Allmystring = new List<string>();
-    void Start()
+    private static List<int> Allmyint = new List<int>();
+    private static List<string> Allmystring = new List<string>();
+    /*public static void Start(string message, string txtname)
     {
-        FileInfo intfile = new FileInfo(Application.dataPath + "/myint.txt");
-        if (intfile.Exists)
+        FileInfo file = new FileInfo(Application.dataPath + "/my" + txtname + ".txt");
+        if (file.Exists)
         {
-            intfile.Delete();
-            intfile.Refresh();
+            file.Delete();
+            file.Refresh();
         }
-        else intfile.Create();
-        FileInfo stringfile = new FileInfo(Application.dataPath + "/mystring.txt");
-        if (stringfile.Exists)
-        {
-            stringfile.Delete();
-            stringfile.Refresh();
-        }
-        else stringfile.Create();
-    }
+    }*/
     //把所有的数据写入文本中
-    public void WriteIntoIntTxt(string message)
+    public static void WriteIntoIntTxt(string message, string txtname)
     {
-        FileInfo file = new FileInfo(Application.dataPath + "/myint.txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/my" + txtname + ".txt");
         if (!file.Exists)
         {
             writer = file.CreateText();
@@ -44,9 +36,9 @@ public class mytxtIO : MonoBehaviour
         writer.Dispose();
         writer.Close();
     }
-    public void WriteIntoStringTxt(string message)
+    public static void WriteIntoStringTxt(string message, string txtname)
     {
-        FileInfo file = new FileInfo(Application.dataPath + "/mystring.txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/my" + txtname + ".txt");
         if (!file.Exists)
         {
             writer = file.CreateText();
@@ -61,26 +53,28 @@ public class mytxtIO : MonoBehaviour
         writer.Close();
     }
     //读取分数 存储到列表中
-    public void ReadOutInt()
+    public static void ReadOut(string type,string txtname)
     {
-        Allmyint.Clear();
-        reader = new StreamReader(Application.dataPath + "/myint.txt", Encoding.UTF8);
+        reader = new StreamReader(Application.dataPath + "/my"+txtname+".txt", Encoding.UTF8);
         string text;
-        while ((text = reader.ReadLine()) != null)
+        switch (type)
+        
         {
-            Allmyint.Add(int.Parse(text));
-        }
-        reader.Dispose();
-        reader.Close();
-    }
-    public void ReadOutString()
-    {
-        Allmyint.Clear();
-        reader = new StreamReader(Application.dataPath + "/mystring.txt", Encoding.UTF8);
-        string text;
-        while ((text = reader.ReadLine()) != null)
-        {
-            Allmystring.Add(text);
+            case "string":
+                Allmystring.Clear();
+                while ((text = reader.ReadLine()) != null)
+                {
+                    Allmystring.Add(text);
+                }
+                break;
+            case "int":
+                Allmyint.Clear();
+                while ((text = reader.ReadLine()) != null)
+                {
+                    Allmyint.Add(int.Parse(text));
+                }
+                break;
+            default:break;
         }
         reader.Dispose();
         reader.Close();
@@ -89,14 +83,14 @@ public class mytxtIO : MonoBehaviour
     /// 获取从列表读取数据之后的List
     /// </summary>
     /// <returns></returns>
-    public List<int> GetmyIntList()
+    public static List<int> GetmyIntList(string txtname)
     {
-        ReadOutInt();
+        ReadOut("int", txtname);
         return Allmyint;
     }
-    public List<string> GetmyStringList()
+    public static List<string> GetmyStringList(string txtname)
     {
-        ReadOutString();
+        ReadOut("string", txtname);
         return Allmystring;
     }
 
