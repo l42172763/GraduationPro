@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InGaming.unity
     guid: 3cc80a474d58c234caee3648e3adad64
+  - enabled: 1
+    path: Assets/Scenes/FirstTry.unity
+    guid: ed559fbcd9166de4186fe25becafbc64
   m_configObjects: {}
