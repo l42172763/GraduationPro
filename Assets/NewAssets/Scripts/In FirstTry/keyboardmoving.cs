@@ -9,10 +9,12 @@ public class keyboardmoving : MonoBehaviour
     [SerializeField] private float vertical;
     public float jumpheight;
     public float easyrate;
+    public float gravityrate;
     // Start is called before the first frame update
     void Start()
     {
         easyrate = 100f;
+        gravityrate = 10f;
         rBody = this.GetComponent<Rigidbody>();
         jumpheight = 5f;
     }
@@ -27,13 +29,16 @@ public class keyboardmoving : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        Vector3 v = rBody.velocity;
+        v.y = -gravityrate;
+        v.z = 0f;
+        v.x = 0f;
         if (horizontal != 0 || vertical != 0)
         {
-            Vector3 v = rBody.velocity;
             v.z = -horizontal * easyrate;
             v.x = vertical * easyrate;
-            rBody.velocity = v;
         }
+        rBody.velocity = v;
     }
     private void jump()
     {
