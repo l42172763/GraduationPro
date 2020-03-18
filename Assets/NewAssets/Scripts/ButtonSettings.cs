@@ -24,6 +24,10 @@ public class ButtonSettings : MonoBehaviour
     {
         SceneManager.LoadScene("JNU");
     }
+    public void LoadPlay()
+    {
+        SceneManager.LoadScene("FirstTry");
+    }
     public void BackToMenu()
     {
         SceneManager.LoadScene("Start Menu");
