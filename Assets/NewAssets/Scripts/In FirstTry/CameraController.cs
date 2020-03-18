@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     private Transform target;
     private Transform startposition;
     private bool getplayer;
-    public ETCJoystick lookJoystick;
+    //public ETCJoystick lookJoystick;
     // Use this for initialization
     void Start()
     {
@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
         sensitivityY =0.1f;//镜头移动速度--上下
         minimumY = -30F;//镜头移动范围--下
         maximumY = 10F;//镜头移动范围--上
-        lookJoystick = ETCInput.GetControlJoystick("CameraJoystick");
+        //lookJoystick = ETCInput.GetControlJoystick("CameraJoystick");
         OriOffset = offset;
         GameObject player;
         if (player = GameObject.FindGameObjectWithTag("Local Player"))
@@ -48,13 +48,13 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Rotate();
-        NewRotate();
+        Rotate();
+        //NewRotate();
         Scale();
         transform.position = target.position + (getplayer? offset : Vector3.zero);
     }
     //缩放
-    private void NewRotate()
+    /*private void NewRotate()
     {
         if (lookJoystick.axisX.axisValue != 0 || lookJoystick.axisY.axisValue != 0)
         {
@@ -64,7 +64,7 @@ public class CameraController : MonoBehaviour
             transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
             Refresh();
         }
-    }
+    }*/
     private void Scale()
     {
         float distance = offset.magnitude;

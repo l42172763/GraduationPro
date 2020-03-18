@@ -20,10 +20,6 @@ public class ButtonSettings : MonoBehaviour
     {
         SceneManager.LoadScene("NewGame");
     }
-    public void LoadMiNiJNU()
-    {
-        SceneManager.LoadScene("JNU");
-    }
     public void LoadPlay()
     {
         SceneManager.LoadScene("FirstTry");

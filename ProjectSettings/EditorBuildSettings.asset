@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: abe167083d97e4c48919ff2c3b87db44
   - enabled: 1
-    path: Assets/Scenes/JNU.unity
-    guid: 220ab0d376884cb4da691ad7c7bdb38d
-  - enabled: 1
     path: Assets/Scenes/NewGame.unity
     guid: 921a20a99842a254d91736a52342188d
   - enabled: 1

@@ -65,11 +65,11 @@
     <Compile Include="Assets\NewAssets\Scripts\AllStatics.cs" />
     <Compile Include="Assets\NewAssets\Scripts\ButtonSettings.cs" />
     <Compile Include="Assets\NewAssets\Scripts\DataTest.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In FirstTry\CameraController.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In FirstTry\DataSet.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\keyboardmoving.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\MiniViewMove.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\UITips.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In JNU\CameraController.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In JNU\DataSet.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\GetInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\GetInput.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\InputNavigator.cs" />
