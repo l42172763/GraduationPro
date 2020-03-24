@@ -101,7 +101,8 @@ public class CameraController : MonoBehaviour
         //  更新相对差值
         offset = transform.position - startposition.position;
     }
-    public void CameraReset(int cr,float tt)
+    public void CameraReset(int cr,float tt)//大部分代码已在测试可用后废弃，
+        //为保持操作界面简洁性而放弃了部分代码的功能
     {
         switch (cr)
         {
