@@ -70,6 +70,7 @@
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\DataSet.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\Keyboardmoving.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\MiniViewMove.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In FirstTry\NavTest.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\PitcureForGirl.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\GetInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\GetInput.cs" />
