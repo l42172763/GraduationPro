@@ -70,8 +70,8 @@
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\DataSet.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\Keyboardmoving.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\MiniViewMove.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In FirstTry\NavTest.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In FirstTry\PitcureForGirl.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\NavTest.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\GetInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\GetInput.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\InputNavigator.cs" />
@@ -211,6 +211,7 @@
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
+    <None Include="Assets\mygirlpos.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

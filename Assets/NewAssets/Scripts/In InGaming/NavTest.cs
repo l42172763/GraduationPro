@@ -6,7 +6,7 @@ public class NavTest : MonoBehaviour
 {
 
     public Transform targetpos;
-    private NavMeshAgent nav;
+    public NavMeshAgent nav;
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
