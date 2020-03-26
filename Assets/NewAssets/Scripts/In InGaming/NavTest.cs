@@ -10,12 +10,15 @@ public class NavTest : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        nav.SetDestination(targetpos.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        nav.SetDestination(targetpos.position);
+    }
+    public void SetNavDest(GameObject tar)
+    {
+        nav.SetDestination(tar.transform.position);
     }
 }

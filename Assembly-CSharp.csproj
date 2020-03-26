@@ -211,7 +211,6 @@
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <None Include="Assets\mygirlpos.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
