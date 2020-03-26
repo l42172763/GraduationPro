@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class NavTest : MonoBehaviour
 {
-
-    public Transform targetpos;
+    public Vector3 targetpos;
     public NavMeshAgent nav;
     void Start()
     {
@@ -15,10 +14,15 @@ public class NavTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nav.SetDestination(targetpos.position);
+        targetpos = nav.destination;
+        if(Vector3.Distance(transform.position,nav.destination)<=2)
+        {
+            nav.isStopped = true;
+        }
     }
     public void SetNavDest(GameObject tar)
     {
+        nav.isStopped = false;
         nav.SetDestination(tar.transform.position);
     }
 }
