@@ -19,6 +19,16 @@ public class SetNavDesButton : MonoBehaviour
         nt.nav.isStopped = false;
         nt.SetNavDest(GameObject.Find("Navredhouse"));
     }
+    public void Target()
+    {
+        nt.nav.isStopped = false;
+        nt.SetNavDest(GameObject.Find("Navtarget"));
+    }
+    public void Canteen()
+    {
+        nt.nav.isStopped = false;
+        nt.SetNavDest(GameObject.Find("Navcanteen"));
+    }
     public void CancelNav()
     {
         nt.nav.isStopped = true;

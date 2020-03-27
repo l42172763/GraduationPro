@@ -93,6 +93,7 @@ public class CameraController : MonoBehaviour
                 transform.position = pos;
                 transform.eulerAngles = rot;
             }
+            Refresh();
         }
 
     }
