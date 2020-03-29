@@ -65,7 +65,6 @@
     <Compile Include="Assets\NewAssets\Scripts\AllStatics.cs" />
     <Compile Include="Assets\NewAssets\Scripts\ButtonSettings.cs" />
     <Compile Include="Assets\NewAssets\Scripts\DataTest.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\AutoLeaderSettings.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\CameraController.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\DataSet.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Keyboardmoving.cs" />

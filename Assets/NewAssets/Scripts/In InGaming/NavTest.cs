@@ -6,9 +6,11 @@ public class NavTest : MonoBehaviour
 {
     public Vector3 targetpos;
     public NavMeshAgent nav;
+    public Keyboardmoving kb;
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
+        kb = GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>();
     }
 
     // Update is called once per frame
@@ -17,6 +19,7 @@ public class NavTest : MonoBehaviour
         targetpos = nav.destination;
         if(Vector3.Distance(transform.position,nav.destination)<=2)
         {
+            kb.autogoing = false;
             nav.isStopped = true;
         }
     }

@@ -9,29 +9,23 @@ public class Keyboardmoving : MonoBehaviour
     public float vertical;
     public float jumpheight;
     public float easyrate;
-    public float gravityrate;//跳跃速度
-    private float jumping;//跳跃时间
     public bool autogoing;//自动寻路中
+    public float speed;
+    public GameObject caca;
     // Start is called before the first frame update
     void Start()
     {
         easyrate = 100f;
-        gravityrate = 20f;
         rBody = this.GetComponent<Rigidbody>();
-        jumpheight = 5f;
-        jumping = 0f;
         autogoing = false;
+        speed = 100f;
+        caca = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
-        Jump();
-        if (jumping > 0)
-        {
-            jumping -= Time.deltaTime;//更新冷却时间
-        }
     }
     private void Movement()
     {
@@ -40,35 +34,24 @@ public class Keyboardmoving : MonoBehaviour
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
-            if (CanJump) v.y = -gravityrate;
-            else v.y = gravityrate;
             v.z = 0f;
             v.x = 0f;
         }
         if (horizontal != 0 || vertical != 0)
         {
-            v.z = -horizontal * easyrate;
+            Vector3 targetDirection = new Vector3(horizontal, 0, vertical);
+            float y = caca.transform.rotation.eulerAngles.y;
+            targetDirection = Quaternion.Euler(0, y, 0) * targetDirection;
+            //caca.transform.Translate(targetDirection * Time.deltaTime * speed, Space.World);
+            transform.Translate(targetDirection * Time.deltaTime * speed, Space.World);
+            transform.LookAt(transform.position+ targetDirection);
+            /*v.z = -horizontal * easyrate;
             v.x = vertical * easyrate;
             RotateChange(horizontal > 0, vertical > 0, horizontal < 0, vertical < 0);
+            if (horizontal != 0) transform.Translate(transform.forward * Time.deltaTime * speed * -horizontal);
+            if (vertical != 0) transform.Translate(transform.right * Time.deltaTime * speed * -vertical);*/
         }
-        rBody.velocity = v;
-    }
-    private void Jump()
-    {
-        Vector3 tt = transform.position;
-        if(Input.GetKeyDown(KeyCode.Space)&&CanJump)
-        {
-            //tt.y += jumpheight;
-            transform.position = tt;
-            jumping = 0.2f;//跳跃时长
-        }
-    }
-    public bool CanJump
-    {
-        get
-        {
-            return jumping <= 0f;
-        }
+        //rBody.velocity = v;
     }
     void RotateChange(bool ht, bool vt, bool hf, bool vf)
     {
