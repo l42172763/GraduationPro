@@ -11,7 +11,7 @@ public class SetNavDesButton : MonoBehaviour
         nt = GameObject.FindGameObjectWithTag("Local Player").GetComponent<NavTest>();
         kb = GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>();
     }
-    public void Cross1()
+    /*public void Cross1()
     {
         kb.autogoing = true;
         nt.nav.isStopped = false;
@@ -34,6 +34,19 @@ public class SetNavDesButton : MonoBehaviour
         kb.autogoing = true;
         nt.nav.isStopped = false;
         nt.SetNavDest(GameObject.Find("Navcanteen"));
+    }*/
+    public void NavDesSet(string Des)
+    {
+        kb.autogoing = true;
+        nt.nav.isStopped = false;
+        nt.SetNavDest(GameObject.Find(Des));
+    }
+    public void Dormins(int t)
+    {
+        kb.autogoing = true;
+        nt.nav.isStopped = false;
+        string s = "NavDormi" + t;
+        nt.SetNavDest(GameObject.Find(s));
     }
     public void CancelNav()
     {

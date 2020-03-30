@@ -41,7 +41,11 @@ public class UITips : MonoBehaviour
     /// </summary>
     public void onShow()
     {
-        gameObject.SetActive(true);
+        if(gameObject.active)
+        {
+            onOK();
+        }
+        else gameObject.SetActive(true);
     }
 
     /// <summary>
