@@ -6,7 +6,6 @@ public class ShowIntroduce : MonoBehaviour
 {
     public string title = "建筑名";
     public string content = "建筑物介绍";
-
     private bool isShow = false;
 
     void OnTriggerEnter(Collider c)

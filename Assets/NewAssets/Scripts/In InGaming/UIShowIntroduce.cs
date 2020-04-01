@@ -73,19 +73,22 @@ public class UIShowIntroduce : MonoBehaviour
 
     public void StartIntroduce(string title, string content)
     {
-        if(!gameObject.activeSelf)
+        if(!GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>().autogoing)
         {
-            SetTitleAndContent(title, content);
-            gameObject.SetActive(true);
-        }
-        else
-        {
-            //if (checkStartCoroutine != null)
-            //    StopCoroutine(checkStartCoroutine);
-            //checkStartCoroutine = StartCoroutine(CheckStartCoroutine(title, content));
-            isHaveAnotherToShow = true;
-            anotherTitle = title;
-            anotherContent = content;
+            if (!gameObject.activeSelf)
+            {
+                SetTitleAndContent(title, content);
+                gameObject.SetActive(true);
+            }
+            else
+            {
+                //if (checkStartCoroutine != null)
+                //    StopCoroutine(checkStartCoroutine);
+                //checkStartCoroutine = StartCoroutine(CheckStartCoroutine(title, content));
+                isHaveAnotherToShow = true;
+                anotherTitle = title;
+                anotherContent = content;
+            }
         }
     }
 
