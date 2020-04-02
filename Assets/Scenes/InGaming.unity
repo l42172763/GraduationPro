@@ -6434,7 +6434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: "C\u533A\u5165\u53E3"
 --- !u!222 &557521238
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7311,6 +7311,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 859278921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &624993774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624993775}
+  m_Layer: 0
+  m_Name: NavExpAPartEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624993775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624993774}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -882.9, y: 0.7, z: 1352.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1227518091}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &639439075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4843502571564304, guid: 2d558afce3dc09a4aba2edf7778732ce,
@@ -14231,7 +14261,7 @@ GameObject:
   - component: {fileID: 1073464907}
   - component: {fileID: 1073464906}
   m_Layer: 5
-  m_Name: Dormin (1)
+  m_Name: APartEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14254,7 +14284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 50, y: -20}
+  m_AnchoredPosition: {x: -50, y: -20}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1073464906
@@ -14301,14 +14331,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 807815550}
-        m_MethodName: Dormins
-        m_Mode: 3
+        m_MethodName: NavDesSet
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: NavExpAPartEntrance
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1073464907
@@ -15202,6 +15232,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1131731035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1133329330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133329331}
+  m_Layer: 0
+  m_Name: NavExpCPartEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1133329331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133329330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -964.4, y: 0.7, z: 1496.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1227518091}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158227541
 GameObject:
   m_ObjectHideFlags: 0
@@ -15866,6 +15926,9 @@ Transform:
   - {fileID: 938878715}
   - {fileID: 1771422126}
   - {fileID: 737800954}
+  - {fileID: 624993775}
+  - {fileID: 2101937853}
+  - {fileID: 1133329331}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16914,7 +16977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: "A\u533A\u5165\u53E3"
 --- !u!222 &1339044243
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18385,7 +18448,7 @@ GameObject:
   - component: {fileID: 1492180325}
   - component: {fileID: 1492180324}
   m_Layer: 5
-  m_Name: Dormin (3)
+  m_Name: CPartEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18408,7 +18471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -50, y: -20}
+  m_AnchoredPosition: {x: 50, y: -20}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492180324
@@ -18455,14 +18518,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 807815550}
-        m_MethodName: Dormins
-        m_Mode: 3
+        m_MethodName: NavDesSet
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: NavExpCPartEntrance
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1492180325
@@ -19161,7 +19224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: "B\u533A\u5165\u53E3"
 --- !u!222 &1518126890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25100,7 +25163,7 @@ GameObject:
   - component: {fileID: 1967626472}
   - component: {fileID: 1967626471}
   m_Layer: 5
-  m_Name: Dormin (2)
+  m_Name: BPartEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25170,14 +25233,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 807815550}
-        m_MethodName: Dormins
-        m_Mode: 3
+        m_MethodName: NavDesSet
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: NavExpBPartEntrance
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1967626472
@@ -26368,6 +26431,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &2101937852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101937853}
+  m_Layer: 0
+  m_Name: NavExpBPartEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101937853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101937852}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -775.4, y: 0.7, z: 1444.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1227518091}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2103046214
 MeshFilter:
   m_ObjectHideFlags: 0
