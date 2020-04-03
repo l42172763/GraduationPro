@@ -14,23 +14,28 @@ public class ButtonSettings : MonoBehaviour
     //切换场景
     public void InGaming()
     {
+        SaveCurrentInfo();
         SceneManager.LoadScene("InGaming");
     }
     public void StartNewGame()
     {
+        SaveCurrentInfo();
         SceneManager.LoadScene("NewGame");
     }
     public void LoadPlay()
     {
+        SaveCurrentInfo();
         SceneManager.LoadScene("FirstTry");
     }
     public void BackToMenu()
     {
+        SaveCurrentInfo();
         SceneManager.LoadScene("Start Menu");
     }
 
     public void ExitGame()
     {
+        SaveCurrentInfo();
         Application.Quit();
     }
     //操纵相机视角
@@ -39,5 +44,16 @@ public class ButtonSettings : MonoBehaviour
         t = GameObject.FindGameObjectWithTag("MainCamera");
         cc = t.GetComponent<CameraController>();
         cc.CameraReset(0,0);
+    }
+    private void SaveCurrentInfo()
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "NewGame":
+                GameObject.Find("LoginSettings").GetComponent<LoginSettings>().SaveData();
+                LocalInformation.ClearCurrents();
+                break;
+            default:break;
+        }
     }
 }
