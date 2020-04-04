@@ -10,6 +10,7 @@ public class DataSet : MonoBehaviour
     StreamReader reader;
     public Vector3 Savedpos;
     public Vector3 Savedpos1;
+    public Vector3 Savedpos2;
     public Quaternion SavedQua;
     public string tt;
     public List<int> myintget;
@@ -27,15 +28,12 @@ public class DataSet : MonoBehaviour
             Savedpos.x = float.Parse(mystringget[0]);
             Savedpos.y = float.Parse(mystringget[1]);
             Savedpos.z = float.Parse(mystringget[2]);
-            /*Savedpos.x = 0f;
-            Savedpos.y = 0f;
-            Savedpos.z = 0f;*/
             thegirl.transform.position = Savedpos;
             Savedpos1.x = float.Parse(mystringget[3]);
             Savedpos1.y = float.Parse(mystringget[4]);
             Savedpos1.z = float.Parse(mystringget[5]);
             SavedQua.eulerAngles = Savedpos1;
-            thegirl.transform.rotation = SavedQua;
+            //thegirl.transform.rotation = SavedQua;
             file.Delete();
         }
     }
