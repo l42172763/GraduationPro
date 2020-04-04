@@ -10,16 +10,6 @@ public static class mytxtIO
 
     private static List<int> Allmyint = new List<int>();
     private static List<string> Allmystring = new List<string>();
-    /*public static void Start(string message, string txtname)
-    {
-        FileInfo file = new FileInfo(Application.dataPath + "/my" + txtname + ".txt");
-        if (file.Exists)
-        {
-            file.Delete();
-            file.Refresh();
-        }
-    }*/
-    //把所有的数据写入文本中
     public static void WriteIntoIntTxt(string message, string txtname)
     {
         FileInfo file = new FileInfo(Application.dataPath + "/my" + txtname + ".txt");

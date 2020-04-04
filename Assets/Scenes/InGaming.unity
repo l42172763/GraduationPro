@@ -19382,7 +19382,7 @@ GameObject:
   - component: {fileID: 1421978463}
   - component: {fileID: 1421978462}
   m_Layer: 5
-  m_Name: SavaPlayerPosition
+  m_Name: SavePlayerPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

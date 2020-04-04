@@ -19,11 +19,11 @@ public static class LocalInformation
     };
     public static UserInfo CurrentInformation;
     private static List<UserInfo> CurrentInformations= new List<UserInfo> { };
-    private static UserInfo SavedInformation = new UserInfo
+    private static UserInfo SavedInformation = new UserInfo//默认账户
     { studentName = "creation", studentMajor = "信息安全", studentNum = "2016050216", password = "123" };
     public static int StudentInfoCheck()
     {
-        if(SavedInformation.studentNum=="2016050216")
+        if(SavedInformation.studentNum=="2016050216")//读取默认账户是否
         {
             DataIn();
         }
@@ -49,7 +49,7 @@ public static class LocalInformation
         }
         return 0;//未找到账户信息
     }
-    private static bool DataIn()
+    private static bool DataIn()//写入SavedInformation中的数据
     {
         for (int i = 0; i < CurrentInformations.ToArray().Length; i++)
         {
@@ -62,11 +62,11 @@ public static class LocalInformation
         CurrentInformations.Add(SavedInformation);
         return true;
     }
-    private static void AllowAddInfo()
+    private static void AllowAddInfo()//内部检查通过后执行此函数以允许新账户写入
     {
         AddInfoAllowed = true;
     }
-    public static void PubAllowAddInfo()
+    public static void PubAllowAddInfo()//外界申请写入数据的执行函数
     {
         AllowAddInfo();
     }
