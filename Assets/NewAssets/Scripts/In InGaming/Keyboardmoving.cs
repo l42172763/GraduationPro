@@ -45,56 +45,6 @@ public class Keyboardmoving : MonoBehaviour
             //caca.transform.Translate(targetDirection * Time.deltaTime * speed, Space.World);
             transform.Translate(targetDirection * Time.deltaTime * speed, Space.World);
             transform.LookAt(transform.position+ targetDirection);
-            /*v.z = -horizontal * easyrate;
-            v.x = vertical * easyrate;
-            RotateChange(horizontal > 0, vertical > 0, horizontal < 0, vertical < 0);
-            if (horizontal != 0) transform.Translate(transform.forward * Time.deltaTime * speed * -horizontal);
-            if (vertical != 0) transform.Translate(transform.right * Time.deltaTime * speed * -vertical);*/
         }
-        //rBody.velocity = v;
-    }
-    void RotateChange(bool ht, bool vt, bool hf, bool vf)
-    {
-        Quaternion rt;
-        Vector3 re;
-        rt = transform.rotation;
-        re = rt.eulerAngles;
-        if(ht)
-        {
-            if (vt)
-            {
-                re.y = 135;
-            }
-            else if (vf)
-            {
-                re.y = -135;
-            }
-            else re.y = 180;
-        }
-        else if(hf)
-        {
-            if (vt)
-            {
-                re.y = 45;
-            }
-            else if (vf)
-            {
-                re.y = -45;
-            }
-            else re.y = 0;
-        }
-        else
-        {
-            if (vt)
-            {
-                re.y = 90;
-            }
-            else if (vf)
-            {
-                re.y = -90;
-            }
-        }
-        rt.eulerAngles = re;
-        transform.rotation = rt;
     }
 }

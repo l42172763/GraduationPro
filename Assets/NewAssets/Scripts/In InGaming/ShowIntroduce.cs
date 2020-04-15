@@ -20,8 +20,11 @@ public class ShowIntroduce : MonoBehaviour
     void OnTriggerExit(Collider c)
     {
 		if (c == null)
-			return;
-        if(isShow)
+        {
+            return;
+        }
+
+        if (isShow)
         {
             UIShowIntroduce.Instance.Close();
         }

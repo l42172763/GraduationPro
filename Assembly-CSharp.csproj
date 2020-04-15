@@ -77,6 +77,7 @@
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\InputNavigator.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\LoginSettings.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\SeeYourPassword.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\LearningSysInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\LocalInformation.cs" />
     <Compile Include="Assets\NewAssets\Scripts\mytxtIO.cs" />
     <Compile Include="Assets\NewAssets\Scripts\UITips.cs" />
@@ -214,6 +215,7 @@
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween50.xml" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\myLoginInfo.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween46.xml" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\Documentation\Version 2.0.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\_Documentation\How to migrate from EasyTouch 4.X.txt" />

@@ -9,14 +9,14 @@ public class DataSet : MonoBehaviour
     StreamWriter writer;
     StreamReader reader;
     public Vector3 Savedpos;
-    public Vector3 Savedpos1;
-    public Vector3 Savedpos2;
     public Quaternion SavedQua;
     public string tt;
     public List<int> myintget;
     public List<string> mystringget;
     public GameObject thegirl;
     public string txtname = "girlpos";
+    public bool PosSettled = true;
+    public bool PosRead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,16 +24,15 @@ public class DataSet : MonoBehaviour
         FileInfo file = new FileInfo(Application.dataPath + "/my" + txtname + ".txt");
         if (file.Exists)
         {
+            PosRead = true;
+            PosSettled = false;
             mystringget = mytxtIO.GetmyStringList(txtname);
             Savedpos.x = float.Parse(mystringget[0]);
             Savedpos.y = float.Parse(mystringget[1]);
             Savedpos.z = float.Parse(mystringget[2]);
-            thegirl.transform.position = Savedpos;
-            Savedpos1.x = float.Parse(mystringget[3]);
-            Savedpos1.y = float.Parse(mystringget[4]);
-            Savedpos1.z = float.Parse(mystringget[5]);
-            SavedQua.eulerAngles = Savedpos1;
-            //thegirl.transform.rotation = SavedQua;
+            transform.position = Savedpos;
+            GameObject.Find("NavDesAwakeSettings").GetComponent<SetNavDesButton>().NavDesSet(this.name);
+            PosSettled = true;
             file.Delete();
         }
     }
@@ -41,7 +40,16 @@ public class DataSet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(PosSettled&&PosRead&&
+            !GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>().autogoing)
+        {
+            PosSettled = false;
+            Savedpos.x = float.Parse(mystringget[3]);
+            Savedpos.y = float.Parse(mystringget[4]);
+            Savedpos.z = float.Parse(mystringget[5]);
+            SavedQua.eulerAngles = Savedpos;
+            thegirl.transform.rotation = SavedQua;
+        }
     }
     public void SaveData()
     {

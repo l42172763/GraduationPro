@@ -23,7 +23,7 @@ public static class LocalInformation
     { studentName = "creation", studentMajor = "信息安全", studentNum = "2016050216", password = "123" };
     public static int StudentInfoCheck()
     {
-        if(SavedInformation.studentNum=="2016050216")//读取默认账户是否
+        if(SavedInformation.studentNum=="2016050216")//读取默认账户
         {
             DataIn();
         }
