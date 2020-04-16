@@ -213,6 +213,7 @@
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween50.xml" />
+    <None Include="Assets\mygirlpos.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\myLoginInfo.txt" />
