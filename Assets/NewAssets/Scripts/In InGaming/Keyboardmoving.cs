@@ -17,7 +17,6 @@ public class Keyboardmoving : MonoBehaviour
     {
         easyrate = 100f;
         rBody = this.GetComponent<Rigidbody>();
-        autogoing = false;
         speed = 100f;
         caca = GameObject.Find("Main Camera");
     }

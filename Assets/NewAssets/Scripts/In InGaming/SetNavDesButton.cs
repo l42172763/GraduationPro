@@ -8,8 +8,7 @@ public class SetNavDesButton : MonoBehaviour
     public NavTest nt;
     private void Start()
     {
-        nt = GameObject.FindGameObjectWithTag("Local Player").GetComponent<NavTest>();
-        kb = GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>();
+
     }
     public void NavDesSet(string Des)
     {

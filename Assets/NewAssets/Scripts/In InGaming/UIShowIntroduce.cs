@@ -21,6 +21,7 @@ public class UIShowIntroduce : MonoBehaviour
     private bool isHaveAnotherToShow = false;
     private string anotherTitle;
     private string anotherContent;
+    public bool needshow;
 
     void Awake()
     {
@@ -71,7 +72,7 @@ public class UIShowIntroduce : MonoBehaviour
 
     public void StartIntroduce(string title, string content)
     {
-        if(!GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>().autogoing)
+        if(!GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>().autogoing&&needshow)
         {
             if (!gameObject.activeSelf)
             {

@@ -50,7 +50,7 @@ public class ButtonSettings : MonoBehaviour
                 LocalInformation.ClearCurrents();
                 break;
             case "InGaming":
-                GameObject.Find("DataSaving").GetComponent<DataSet>().SaveData();
+                GameObject.Find("DataSaving").GetComponent<DataSet>().SaveSituation();
                 break;
             default:break;
         }
