@@ -15,10 +15,17 @@ public class DataLoad : MonoBehaviour
     public bool PosSettled = true;
     public bool PosRead = false;
     public GameObject UIshow;
+    public GameObject CoverImage;
     public string UIshowIntrotxt = "UIIntroduce";
     // Start is called before the first frame update
     void Start()
     {
+
+        LearningSysInfo.CurrentLesson = LearningSysInfo.ExampleLesson;
+        LearningSysInfo.AddLessons();
+        LearningSysInfo.LearnTheLesson("Default", 0);
+
+
         thegirl = GameObject.FindGameObjectWithTag("Local Player");
         FileInfo file = new FileInfo(Application.dataPath + "/my" + situationtxt + ".txt");
         if (file.Exists)
@@ -32,32 +39,21 @@ public class DataLoad : MonoBehaviour
             transform.position = Savedpos;
             PosSettled = true;
             GameObject.Find("NavDesAwakeSettings").GetComponent<SetNavDesButton>().NavDesSet(this.name);
+            UIshow.GetComponent<UIShowIntroduce>().needshow = false;
             file.Delete();
         }
         else
         {
-            //Destroy(gameObject, 0f);
+            CoverImage.GetComponent<LoadingControl>().ActiveThis();
+            Destroy(gameObject, 0f);
         }
-        /*file = new FileInfo(Application.dataPath + "/my" + UIshowIntrotxt + ".txt");
-        if (file.Exists)
-        {
-            PosRead = true;
-            PosSettled = false;
-            mystringget = mytxtIO.GetmyStringList(UIshowIntrotxt);
-            UIshow.GetComponent<UIShowIntroduce>().needshow = bool.Parse(mystringget[0]);
-            file.Delete();
-        }
-        if(!PosRead)
-        {
-            //Destroy(gameObject, 0f);
-        }*/
     }
 
     // Update is called once per frame
     void Update()
     {
         if (PosSettled && PosRead &&
-            !GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>().autogoing)
+            !AllStatics.AutoNavingNow)
         {
             Savedpos.x = float.Parse(mystringget[3]);
             Savedpos.y = float.Parse(mystringget[4]);
@@ -65,7 +61,9 @@ public class DataLoad : MonoBehaviour
             SavedQua.eulerAngles = Savedpos;
             thegirl.transform.rotation = SavedQua;
             PosSettled = true;
-            //Destroy(gameObject, 0f);
+            UIshow.GetComponent<UIShowIntroduce>().needshow = true;
+            CoverImage.GetComponent<LoadingControl>().ActiveThis();
+            Destroy(gameObject, 0f);
         }
     }
 }

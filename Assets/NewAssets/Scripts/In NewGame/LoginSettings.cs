@@ -8,11 +8,24 @@ public class LoginSettings : MonoBehaviour
 {
     public GameObject InfoBase;
     public GameObject TextCon;
+    public GameObject SuccessAddInfo;
+    public GameObject FailAddInfo;
+    public GameObject NewInfoGetBase;
+    public GameObject WhiteBackground;
     public string InfoSaveName;
     public List<string> Infoget;
     public void CreatNew()
     {
-        LocalInformation.StudentInfoAdd();
+        NewInfoGetBase.GetComponent<UITips>().onOK();
+        WhiteBackground.SetActive(true);
+        if (LocalInformation.StudentInfoAdd())
+        {
+            SuccessAddInfo.GetComponent<UITips>().onShow();
+        }
+        else
+        {
+            FailAddInfo.GetComponent<UITips>().onShow();
+        }
     }
     public void AffirmInfo()
     {
@@ -25,6 +38,7 @@ public class LoginSettings : MonoBehaviour
     }
     void Start()
     {
+        WhiteBackground.SetActive(false);
         InfoSaveName = "LoginInfo";
         FileInfo file = new FileInfo(Application.dataPath + "/my" + InfoSaveName + ".txt");
         if (file.Exists)
@@ -38,6 +52,7 @@ public class LoginSettings : MonoBehaviour
                 LocalInformation.CurrentInformation.password = Infoget[++i];
                 LocalInformation.StudentInfoAdd();
             }
+            LocalInformation.PubRefuseAddInfo();
             file.Delete();
         }
     }

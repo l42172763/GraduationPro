@@ -43,9 +43,9 @@ public static class LocalInformation
                 else return 1;//找到输入信息但其他属性不正确，不允许登陆
             }
         }
-        if (true)
+        if (AllStatics.TestMode)
         {
-            AllowAddInfo();
+            AddInfoAllowed = true;
         }
         return 0;//未找到账户信息
     }
@@ -62,13 +62,13 @@ public static class LocalInformation
         CurrentInformations.Add(SavedInformation);
         return true;
     }
-    private static void AllowAddInfo()//内部检查通过后执行此函数以允许新账户写入
+    public static void PubAllowAddInfo()//外界申请写入数据的执行函数
     {
         AddInfoAllowed = true;
     }
-    public static void PubAllowAddInfo()//外界申请写入数据的执行函数
+    public static void PubRefuseAddInfo()//外界关闭写入数据的执行函数
     {
-        AllowAddInfo();
+        AddInfoAllowed = false;
     }
     public static bool StudentInfoAdd()//添加账户信息
     {

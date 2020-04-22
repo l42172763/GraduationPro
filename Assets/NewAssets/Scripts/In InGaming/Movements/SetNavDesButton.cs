@@ -12,20 +12,20 @@ public class SetNavDesButton : MonoBehaviour
     }
     public void NavDesSet(string Des)
     {
-        kb.autogoing = true;
+        AllStatics.AutoNavingNow = true;
         nt.nav.isStopped = false;
         nt.SetNavDest(GameObject.Find(Des));
     }
     public void Dormins(int t)
     {
-        kb.autogoing = true;
+        AllStatics.AutoNavingNow = true;
         nt.nav.isStopped = false;
         string s = "NavDormi" + t;
         nt.SetNavDest(GameObject.Find(s));
     }
     public void CancelNav()
     {
-        kb.autogoing = false;
+        AllStatics.AutoNavingNow = false;
         nt.nav.isStopped = true;
     }
 }

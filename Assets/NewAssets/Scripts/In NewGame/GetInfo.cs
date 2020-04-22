@@ -26,6 +26,7 @@ public class GetInfo : MonoBehaviour
         switch (LocalInformation.StudentInfoCheck())
         {
             case 2:
+                Debug.Log("success entrance");
                 BS.InGaming();
                 break;
             case 1:

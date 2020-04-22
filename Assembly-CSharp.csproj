@@ -64,16 +64,19 @@
   <ItemGroup>
     <Compile Include="Assets\NewAssets\Scripts\AllStatics.cs" />
     <Compile Include="Assets\NewAssets\Scripts\ButtonSettings.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\CameraController.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\DataLoad.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\DataSet.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\Keyboardmoving.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\MiniViewMove.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\NavTest.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\PitcureForGirl.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\SetNavDesButton.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\ShowIntroduce.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UIShowIntroduce.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\Data\DataLoad.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\Data\DataSet.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\CameraController.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\Keyboardmoving.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\NavTest.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\SetNavDesButton.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\LoadingControl.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\LocalTextChange.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\MiniViewMove.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\NavButtonControl.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\PitcureForGirl.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\ShowIntroduce.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\UIShowIntroduce.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\GetInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\InputNavigator.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\LoginSettings.cs" />
@@ -216,7 +219,6 @@
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween50.xml" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
-    <None Include="Assets\myLoginInfo.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween46.xml" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\Documentation\Version 2.0.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\_Documentation\How to migrate from EasyTouch 4.X.txt" />

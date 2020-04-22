@@ -22,6 +22,7 @@ public class UIShowIntroduce : MonoBehaviour
     private string anotherTitle;
     private string anotherContent;
     public bool needshow;
+    public Toggle toggle;
 
     void Awake()
     {
@@ -48,13 +49,14 @@ public class UIShowIntroduce : MonoBehaviour
         moveUpTweener.OnComplete(OnCloseComplete);
 
         gameObject.SetActive(false);
+
+        toggle.onValueChanged.AddListener(ToggleEvent);
+        needshow = true;
     }
 
     public void Close()
     {
-        //if (checkStartCoroutine != null)
-        //    StopCoroutine(checkStartCoroutine);
-        moveDownTweener.Pause();
+        //moveDownTweener.Pause();
         moveUpTweener.ChangeStartValue(transform.position);
         moveUpTweener.Play();
     }
@@ -63,35 +65,32 @@ public class UIShowIntroduce : MonoBehaviour
     {
         moveUpTweener.Rewind();
         gameObject.SetActive(false);
-        if(isHaveAnotherToShow)
+        /*if(isHaveAnotherToShow)
         {
             isHaveAnotherToShow = false;
             StartIntroduce(anotherTitle, anotherContent);
-        }
+        }*/
     }
 
     public void StartIntroduce(string title, string content)
     {
-        if(!GameObject.FindGameObjectWithTag("Local Player").GetComponent<Keyboardmoving>().autogoing&&needshow)
+        if(!AllStatics.AutoNavingNow && needshow)
         {
-            if (!gameObject.activeSelf)
+            //if (!gameObject.activeSelf)
             {
-                SetTitleAndContent(title, content);
                 gameObject.SetActive(true);
+                SetTitleAndContent(title, content);
             }
-            else
+            /*else
             {
-                //if (checkStartCoroutine != null)
-                //    StopCoroutine(checkStartCoroutine);
-                //checkStartCoroutine = StartCoroutine(CheckStartCoroutine(title, content));
                 isHaveAnotherToShow = true;
                 anotherTitle = title;
                 anotherContent = content;
-            }
+            }*/
         }
     }
 
-    private IEnumerator CheckStartCoroutine(string title, string content)
+    /*private IEnumerator CheckStartCoroutine(string title, string content)
     {
         yield return null;
         while(gameObject.activeSelf)
@@ -102,7 +101,7 @@ public class UIShowIntroduce : MonoBehaviour
         yield return null;
         SetTitleAndContent(title, content);
         gameObject.SetActive(true);
-    }
+    }*/
 
     private void SetTitleAndContent(string title, string content)
     {
@@ -120,5 +119,26 @@ public class UIShowIntroduce : MonoBehaviour
     {
         moveDownTweener.Rewind();
     }
+    public void CloseIntroPage()
+    {
+        if (needshow)
+        {
+            needshow = false;
+        }
+        else needshow = true;
+    }
+    
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="isOn">toggle 的选中与否</param>
+    private void ToggleEvent(bool isOn)
+    {
+        needshow = isOn;
+        if (gameObject.activeSelf && !needshow) 
+        {
+            Close();
+        }
+    }
 }

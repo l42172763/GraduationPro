@@ -12,6 +12,12 @@ public static class mytxtIO
     private static List<string> Allmystring = new List<string>();
     public static void WriteIntoIntTxt(string message, string txtname)
     {
+        char[] datain=message.ToCharArray();
+        for(int i=0;i<datain.Length;i++)
+        {
+            datain[i] = ToSecret(datain[i]);
+        }
+        message = new string(datain);
         FileInfo file = new FileInfo(Application.dataPath + "/my" + txtname + ".txt");
         if (!file.Exists)
         {
@@ -28,6 +34,12 @@ public static class mytxtIO
     }
     public static void WriteIntoStringTxt(string message, string txtname)
     {
+        char[] datain = message.ToCharArray();
+        for (int i = 0; i < datain.Length; i++)
+        {
+            datain[i] = ToSecret(datain[i]);
+        }
+        message = new string(datain);
         FileInfo file = new FileInfo(Application.dataPath + "/my" + txtname + ".txt");
         if (!file.Exists)
         {
@@ -54,6 +66,12 @@ public static class mytxtIO
                 Allmystring.Clear();
                 while ((text = reader.ReadLine()) != null)
                 {
+                    char[] datain = text.ToCharArray();
+                    for (int i = 0; i < datain.Length; i++)
+                    {
+                        datain[i] = ToMessage(datain[i]);
+                    }
+                    text = new string(datain);
                     Allmystring.Add(text);
                 }
                 break;
@@ -61,6 +79,12 @@ public static class mytxtIO
                 Allmyint.Clear();
                 while ((text = reader.ReadLine()) != null)
                 {
+                    char[] datain = text.ToCharArray();
+                    for (int i = 0; i < datain.Length; i++)
+                    {
+                        datain[i] = ToMessage(datain[i]);
+                    }
+                    text = new string(datain);
                     Allmyint.Add(int.Parse(text));
                 }
                 break;
@@ -83,5 +107,48 @@ public static class mytxtIO
         ReadOut("string", txtname);
         return Allmystring;
     }
-
+    private static char ToSecret(char need)
+    {
+        if (need <= 'z' && need >= 'a')
+        {
+            need++;
+            if (need > 'z') need = 'a';
+            return need;
+        }
+        if (need <= 'Z' && need >= 'A')
+        {
+            need++;
+            if (need > 'Z') need = 'A';
+            return need;
+        }
+        if (need <= '9' && need >= '0')
+        {
+            need++;
+            if (need > '9') need = '0';
+            return need;
+        }
+        return need;
+    }
+    private static char ToMessage(char need)
+    {
+        if (need <= 'z' && need >= 'a')
+        {
+            need--;
+            if (need < 'a') need = 'z';
+            return need;
+        }
+        if (need <= 'Z' && need >= 'A')
+        {
+            need--;
+            if (need < 'A') need = 'Z';
+            return need;
+        }
+        if (need <= '9' && need >= '0')
+        {
+            need--;
+            if (need < '0') need = '9';
+            return need;
+        }
+        return need;
+    }
 }

@@ -9,7 +9,6 @@ public class Keyboardmoving : MonoBehaviour
     public float vertical;
     public float jumpheight;
     public float easyrate;
-    public bool autogoing;//自动寻路中
     public float speed;
     public GameObject caca;
     // Start is called before the first frame update
@@ -29,7 +28,7 @@ public class Keyboardmoving : MonoBehaviour
     private void Movement()
     {
         Vector3 v = rBody.velocity;
-        if (!autogoing)
+        if (!AllStatics.AutoNavingNow)
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
