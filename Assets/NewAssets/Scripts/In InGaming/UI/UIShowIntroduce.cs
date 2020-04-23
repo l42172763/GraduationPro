@@ -21,7 +21,6 @@ public class UIShowIntroduce : MonoBehaviour
     private bool isHaveAnotherToShow = false;
     private string anotherTitle;
     private string anotherContent;
-    public bool needshow;
     public Toggle toggle;
 
     void Awake()
@@ -51,7 +50,7 @@ public class UIShowIntroduce : MonoBehaviour
         gameObject.SetActive(false);
 
         toggle.onValueChanged.AddListener(ToggleEvent);
-        needshow = true;
+        AllStatics.NeedShowIntroduce = false;
     }
 
     public void Close()
@@ -74,7 +73,7 @@ public class UIShowIntroduce : MonoBehaviour
 
     public void StartIntroduce(string title, string content)
     {
-        if(!AllStatics.AutoNavingNow && needshow)
+        if(!AllStatics.AutoNavingNow && AllStatics.NeedShowIntroduce)
         {
             //if (!gameObject.activeSelf)
             {
@@ -121,11 +120,11 @@ public class UIShowIntroduce : MonoBehaviour
     }
     public void CloseIntroPage()
     {
-        if (needshow)
+        if (AllStatics.NeedShowIntroduce)
         {
-            needshow = false;
+            AllStatics.NeedShowIntroduce = false;
         }
-        else needshow = true;
+        else AllStatics.NeedShowIntroduce = true;
     }
     
 
@@ -135,8 +134,8 @@ public class UIShowIntroduce : MonoBehaviour
     /// <param name="isOn">toggle 的选中与否</param>
     private void ToggleEvent(bool isOn)
     {
-        needshow = isOn;
-        if (gameObject.activeSelf && !needshow) 
+        AllStatics.NeedShowIntroduce = isOn;
+        if (gameObject.activeSelf && !AllStatics.NeedShowIntroduce) 
         {
             Close();
         }

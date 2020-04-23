@@ -26,7 +26,9 @@ public static class LearningSysInfo
         }
     }
     public static List<Lesson> Lessons=new List<Lesson> { };
-    public static Lesson CurrentLesson;
+    public static Lesson CurrentAllNeedLesson = new Lesson { };
+    public static Lesson CurrentMajorNeedLesson = new Lesson { };
+    public static Lesson CurrentMajorElectLesson = new Lesson { };
     public static Lesson ExampleLesson = new Lesson
     {
         CourseNum = 0,
@@ -37,8 +39,8 @@ public static class LearningSysInfo
     };
     public static void AddLessons()//添加课程；添加前应将课程相关信息写入CurrentLesson
     {
-        CurrentLesson.Learnt = false;
-        Lessons.Add(CurrentLesson);
+        CurrentAllNeedLesson.Learnt = false;
+        Lessons.Add(CurrentAllNeedLesson);
     }
     public static int LearnTheLesson(string Cname,int Cnum)
     {
@@ -47,7 +49,7 @@ public static class LearningSysInfo
         {
             if(Lessons[i].CourseName==Cname&&Lessons[i].CourseNum==Cnum)
             {
-                CurrentLesson = Lessons[i];
+                CurrentAllNeedLesson = Lessons[i];
                 return Learning()?1:0;
             }
         }
@@ -55,7 +57,15 @@ public static class LearningSysInfo
     }
     public static bool Learning()
     {
-        Debug.Log(CurrentLesson.Contents);
+        Debug.Log(CurrentAllNeedLesson.Contents);
         return true;
     }
+    public static Lesson HighLevelMath = new Lesson
+    {
+        CourseName = "高等数学",
+        CourseNum = 1,
+        ContentType = 1,
+        Contents = "指相对于初等数学而言，数学的对象及方法较为繁杂的一部分。广义地说，初等数学之外的数学都是高等数学，也有将中学较深入的代数、几何以及简单的集合论初步、逻辑初步称为中等数学的，将其作为中小学阶段的初等数学与大学阶段的高等数学的过渡。通常认为，高等数学是由微积分学，较深入的代数学、几何学以及它们之间的交叉内容所形成的一门基础学科。主要内容包括：数列、极限、微积分、空间解析几何与线性代数、级数、常微分方程。工科、理科、财经类研究生考试的基础科目。",
+        PreClass = null
+    };
 }

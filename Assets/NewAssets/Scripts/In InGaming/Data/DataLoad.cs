@@ -17,13 +17,14 @@ public class DataLoad : MonoBehaviour
     public GameObject UIshow;
     public GameObject CoverImage;
     public string UIshowIntrotxt = "UIIntroduce";
+
+
+    public string URL = string.Empty;
     // Start is called before the first frame update
     void Start()
     {
-
-        LearningSysInfo.CurrentLesson = LearningSysInfo.ExampleLesson;
-        LearningSysInfo.AddLessons();
-        LearningSysInfo.LearnTheLesson("Default", 0);
+        LearningSysInfo.CurrentAllNeedLesson = LearningSysInfo.HighLevelMath;
+        
 
 
         thegirl = GameObject.FindGameObjectWithTag("Local Player");
@@ -39,7 +40,7 @@ public class DataLoad : MonoBehaviour
             transform.position = Savedpos;
             PosSettled = true;
             GameObject.Find("NavDesAwakeSettings").GetComponent<SetNavDesButton>().NavDesSet(this.name);
-            UIshow.GetComponent<UIShowIntroduce>().needshow = false;
+            AllStatics.NeedShowIntroduce = false;
             file.Delete();
         }
         else
@@ -61,7 +62,7 @@ public class DataLoad : MonoBehaviour
             SavedQua.eulerAngles = Savedpos;
             thegirl.transform.rotation = SavedQua;
             PosSettled = true;
-            UIshow.GetComponent<UIShowIntroduce>().needshow = true;
+            AllStatics.NeedShowIntroduce = true;
             CoverImage.GetComponent<LoadingControl>().ActiveThis();
             Destroy(gameObject, 0f);
         }

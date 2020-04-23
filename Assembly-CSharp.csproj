@@ -70,12 +70,14 @@
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\Keyboardmoving.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\NavTest.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\SetNavDesButton.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\DailyWorkListControl.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\LoadingControl.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\LocalTextChange.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\MiniViewMove.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\NavButtonControl.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\PitcureForGirl.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\ShowIntroduce.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\ShowWorkList.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\UI\UIShowIntroduce.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\GetInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\InputNavigator.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Assets\NewAssets\Scripts\LearningSysInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\LocalInformation.cs" />
     <Compile Include="Assets\NewAssets\Scripts\mytxtIO.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\NotShownOnload.cs" />
     <Compile Include="Assets\NewAssets\Scripts\UITips.cs" />
     <Compile Include="Assets\PreSettledAssets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\AutoSelect\MultiLayerTouch.cs" />
