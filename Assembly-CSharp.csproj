@@ -83,6 +83,7 @@
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\InputNavigator.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\LoginSettings.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\SeeYourPassword.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In StartMenu\ChangeTestMode.cs" />
     <Compile Include="Assets\NewAssets\Scripts\LearningSysInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\LocalInformation.cs" />
     <Compile Include="Assets\NewAssets\Scripts\mytxtIO.cs" />
@@ -241,6 +242,7 @@
     <None Include="Assets\PreSettledAssets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\How to migrate from EasyTouch 4.X.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\readme_DOTweenPro.txt" />
+    <None Include="Assets\LoginInfo.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/MiniJNUOnUpdate/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

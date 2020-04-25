@@ -28,7 +28,7 @@ public class DataLoad : MonoBehaviour
 
 
         thegirl = GameObject.FindGameObjectWithTag("Local Player");
-        FileInfo file = new FileInfo(Application.dataPath + "/my" + situationtxt + ".txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/" + AllStatics.CurrentInformation.studentNum + situationtxt + ".txt");
         if (file.Exists)
         {
             PosRead = true;
@@ -62,7 +62,6 @@ public class DataLoad : MonoBehaviour
             SavedQua.eulerAngles = Savedpos;
             thegirl.transform.rotation = SavedQua;
             PosSettled = true;
-            AllStatics.NeedShowIntroduce = true;
             CoverImage.GetComponent<LoadingControl>().ActiveThis();
             Destroy(gameObject, 0f);
         }
