@@ -40,7 +40,7 @@ public class LoginSettings : MonoBehaviour
     {
         WhiteBackground.SetActive(false);
         InfoSaveName = "LoginInfo";
-        FileInfo file = new FileInfo(Application.dataPath + "/my" + InfoSaveName + ".txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/" + InfoSaveName + ".txt");
         if (file.Exists)
         {
             Infoget = mytxtIO.GetmyStringList(InfoSaveName);

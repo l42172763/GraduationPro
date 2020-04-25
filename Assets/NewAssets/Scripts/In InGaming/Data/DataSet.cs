@@ -7,11 +7,12 @@ using System.Text;
 public class DataSet : MonoBehaviour
 {
     public GameObject thegirl;
-    public string txtname = "girlpos";
+    public string txtname;
     // Start is called before the first frame update
     void Start()
     {
         thegirl = GameObject.FindGameObjectWithTag("Local Player");
+        txtname = AllStatics.CurrentUser + "girlpos";
     }
 
     // Update is called once per frame

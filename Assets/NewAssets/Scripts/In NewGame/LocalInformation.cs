@@ -39,7 +39,11 @@ public static class LocalInformation
 
                 if (CurrentInformation.studentMajor == CurrentInformations[i].studentMajor
                 && CurrentInformation.password == CurrentInformations[i].password)
+                {
+                    AllStatics.CurrentUser = CurrentInformation.studentNum;
+                    Debug.Log(AllStatics.CurrentUser);
                     return 2;//找到输入信息且其他属性正确，允许登陆
+                }
                 else return 1;//找到输入信息但其他属性不正确，不允许登陆
             }
         }

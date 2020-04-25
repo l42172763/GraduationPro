@@ -18,7 +18,7 @@ public static class mytxtIO
             datain[i] = ToSecret(datain[i]);
         }
         message = new string(datain);
-        FileInfo file = new FileInfo(Application.dataPath + "/" + AllStatics.CurrentInformation.studentNum + txtname + ".txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/" + txtname + ".txt");
         if (!file.Exists)
         {
             writer = file.CreateText();
@@ -40,7 +40,7 @@ public static class mytxtIO
             datain[i] = ToSecret(datain[i]);
         }
         message = new string(datain);
-        FileInfo file = new FileInfo(Application.dataPath + "/" + AllStatics.CurrentInformation.studentNum + txtname + ".txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/" + txtname + ".txt");
         if (!file.Exists)
         {
             writer = file.CreateText();
@@ -57,7 +57,7 @@ public static class mytxtIO
     //读取分数 存储到列表中
     public static void ReadOut(string type,string txtname)
     {
-        reader = new StreamReader(Application.dataPath + "/" + AllStatics.CurrentInformation.studentNum + txtname + ".txt", Encoding.UTF8);
+        reader = new StreamReader(Application.dataPath + "/" + txtname + ".txt", Encoding.UTF8);
         string text;
         switch (type)
         

@@ -11,7 +11,7 @@ public class DataLoad : MonoBehaviour
     public Quaternion SavedQua;
     public List<int> myintget;
     public List<string> mystringget;
-    public string situationtxt = "girlpos";
+    public string situationtxt;
     public bool PosSettled = true;
     public bool PosRead = false;
     public GameObject UIshow;
@@ -24,11 +24,11 @@ public class DataLoad : MonoBehaviour
     void Start()
     {
         LearningSysInfo.CurrentAllNeedLesson = LearningSysInfo.HighLevelMath;
-        
 
+        situationtxt = AllStatics.CurrentUser + "girlpos";
 
         thegirl = GameObject.FindGameObjectWithTag("Local Player");
-        FileInfo file = new FileInfo(Application.dataPath + "/" + AllStatics.CurrentInformation.studentNum + situationtxt + ".txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/" + situationtxt + ".txt");
         if (file.Exists)
         {
             PosRead = true;
