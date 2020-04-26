@@ -43,14 +43,19 @@ public class ButtonSettings : MonoBehaviour
     }
     private void SaveCurrentInfo()
     {
-        switch (SceneManager.GetActiveScene().name)
+        switch (SceneManager.GetActiveScene().name)//离开某个界面时，存储属于该界面的信息
         {
+            case "Start Menu":
+                break;
             case "NewGame":
+                LocalInformation.RebuildData();//删除已存储的信息
+                LocalInformation.SaveData();//重建本地文件进行存储
+                LocalInformation.ClearCurrents();
                 break;
             case "InGaming":
-                LocalInformation.SaveData();
-                LocalInformation.ClearCurrents();
-                GameObject.Find("DataSaving").GetComponent<DataSet>().SaveSituation();
+                GameObject.Find("DataSaving").GetComponent<DataSet>().SaveSituation();//存储玩家位置
+                LearningSysInfo.SaveLinkOfStuLes();
+                //还应当存储当前已学完的课程
                 break;
             default:break;
         }

@@ -9,26 +9,21 @@ public class DataLoad : MonoBehaviour
     public GameObject thegirl;
     public Vector3 Savedpos;
     public Quaternion SavedQua;
-    public List<int> myintget;
     public List<string> mystringget;
     public string situationtxt;
+    public string Classtxt;
     public bool PosSettled = true;
     public bool PosRead = false;
-    public GameObject UIshow;
     public GameObject CoverImage;
-    public string UIshowIntrotxt = "UIIntroduce";
 
-
-    public string URL = string.Empty;
-    // Start is called before the first frame update
     void Start()
     {
-        LearningSysInfo.CurrentAllNeedLesson = LearningSysInfo.HighLevelMath;
-
-        situationtxt = AllStatics.CurrentUser + "girlpos";
-
+        LearningSysInfo.LoadSavedLinkOfSL();
+        situationtxt = AllStatics.CurrentUser + "girlpos";//获取当前账户名用于设置此账户的角色位置信息存储
+        Classtxt = AllStatics.CurrentUser + "LearntClasses";//获取上述内容用于读写已学课程
         thegirl = GameObject.FindGameObjectWithTag("Local Player");
         FileInfo file = new FileInfo(Application.dataPath + "/" + situationtxt + ".txt");
+        FileInfo Class = new FileInfo(Application.dataPath + "/" + Classtxt + ".txt");
         if (file.Exists)
         {
             PosRead = true;
@@ -45,7 +40,7 @@ public class DataLoad : MonoBehaviour
         }
         else
         {
-            CoverImage.GetComponent<LoadingControl>().ActiveThis();
+            CoverImage.GetComponent<LoadingControl>().ActiveThis();//关闭加载界面
             Destroy(gameObject, 0f);
         }
     }

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-public static class LocalInformation
+public static class LocalInformation//登录界面的本地数据
 {
     public static bool TestMode = false;
     public static int ScenesNumber;
@@ -17,19 +18,6 @@ public static class LocalInformation
         public string studentMajor;//专业
         public string studentNum;//学号
         public string password;//密码
-        public int LearntClassAmount;//已学课程数
-        public List<string> LearntClasses;//已学课程
-        public int ResetAmount()
-        {
-            LearntClassAmount = LearntClasses.ToArray().Length;
-            return LearntClassAmount;
-        }
-        public int ClassAdd(string AddClass)
-        {
-            LearntClasses.Add(AddClass);
-            LearntClassAmount = LearntClasses.ToArray().Length;
-            return LearntClassAmount;
-        }
     };
     public static UserInfo CurrentInformation = new UserInfo { };
     private static List<UserInfo> CurrentInformations= new List<UserInfo> { };
@@ -39,7 +27,6 @@ public static class LocalInformation
         studentMajor = "信息安全",
         studentNum = "2016050216",
         password = "123",
-        LearntClassAmount = 0
     };
     public static int StudentInfoCheck()
     {
@@ -59,7 +46,7 @@ public static class LocalInformation
 
                 if (CurrentInformation.studentMajor == CurrentInformations[i].studentMajor
                 && CurrentInformation.password == CurrentInformations[i].password)
-                {
+                {//判断输入的学号存在后，验证账户信息，此处并没有用到用户姓名
                     AllStatics.CurrentUser = CurrentInformation.studentNum;
                     Debug.Log("登录账户：" + AllStatics.CurrentUser);
                     return 2;//找到输入信息且其他属性正确，允许登陆
@@ -111,36 +98,19 @@ public static class LocalInformation
         }
         else return false;//无权添加
     }
-    public static bool CheckAllowance()
+    public static bool CheckAllowance()//检查是否允许添加信息
     {
         return AddInfoAllowed;
     }
-    public static bool LoadData(int i)
+    public static void RebuildData()
     {
-        if (i < CurrentInformations.ToArray().Length)
+        FileInfo file = new FileInfo(Application.dataPath + "/" + LocalInformation.InfoSaveName + ".txt");
+        if (file.Exists)
         {
-            CurrentInformation = CurrentInformations[i];
-            return true;
+            file.Delete();//销毁此时存储的信息，便于重新生成数据文件
         }
-        else return false;
     }
-
-
-    public static int NewClassLearnt(string TheClass,string User)//添加新的已学课程
-    {
-        for(int i=0;i<CurrentInformations.ToArray().Length;i++)
-        {
-            if (CurrentInformations[i].studentNum == User)
-            {
-                int t = CurrentInformations[i].ResetAmount();
-                return CurrentInformations[i].ClassAdd(TheClass);
-            }
-        }
-        return -1;
-    }
-
-
-    public static void SaveData()
+    public static void SaveData()//依次保存所有的当前存储的账户信息
     {
         string ls;
         for (int i = 0; i < CurrentInformations.ToArray().Length; i++)
@@ -150,15 +120,6 @@ public static class LocalInformation
             ls = CurrentInformations[i].studentMajor + "";
             mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
             ls = CurrentInformations[i].password + "";
-            mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
-            //ls = CurrentInformations[i].LearntClassAmount + "";
-            //mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
-            for (int j = 0; j < CurrentInformations[i].LearntClasses.ToArray().Length; j++)
-            {
-                ls = CurrentInformation.LearntClasses[j] + "";
-                mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
-            }
-            ls = "endInfo";
             mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
         }
     }

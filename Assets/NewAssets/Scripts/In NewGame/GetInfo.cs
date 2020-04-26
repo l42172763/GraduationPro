@@ -26,16 +26,16 @@ public class GetInfo : MonoBehaviour
         switch (LocalInformation.StudentInfoCheck())
         {
             case 2:
-                Debug.Log("success entrance");
+                Debug.Log("success entrance");//输入正确，进入游戏界面
                 BS.InGaming();
                 break;
             case 1:
-                Debug.Log("wrong info");
+                Debug.Log("wrong info");//输入信息错误，要求重新输入
                 ClearInputF();
                 WrongEntranceCheck.GetComponent<UITips>().onShow();
                 break;
             case 0:
-                Debug.Log("no info");
+                Debug.Log("no info");//用户名不存在，若处于开发者模式则询问是否添加账户
                 ClearInputF();
                 NewUserCheck.GetComponent<UITips>().onShow();
                 break;

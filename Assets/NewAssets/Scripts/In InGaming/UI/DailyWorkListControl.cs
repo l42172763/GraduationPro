@@ -12,12 +12,13 @@ public class DailyWorkListControl : MonoBehaviour
     public Text Type1Name;
     public Text Type2Name;
     public Text Type3Name;
-    private void Start()
+    private void Start()//加载时应读取三种类型的课程中各自的课程列表，等待DataLoad调用设置课程函数
     {
         LearningSysInfo.LoadLocalClasses();
+        //下面按顺序读取课程中的三类课程
         for(int i=0;i<LearningSysInfo.Lessons.ToArray().Length;i++)
         {
-            if(LearningSysInfo.Lessons[i].CourseType==1)
+            if(LearningSysInfo.Lessons[i].CourseType== 1 && !LearningSysInfo.Lessons[i].Learnt)
             {
                 LearningSysInfo.CurrentAllNeedLesson = LearningSysInfo.Lessons[i];
                 break;
@@ -25,7 +26,7 @@ public class DailyWorkListControl : MonoBehaviour
         }
         for(int i=0;i<LearningSysInfo.Lessons.ToArray().Length;i++)
         {
-            if(LearningSysInfo.Lessons[i].CourseType==2)
+            if(LearningSysInfo.Lessons[i].CourseType==2 && !LearningSysInfo.Lessons[i].Learnt)
             {
                 LearningSysInfo.CurrentMajorNeedLesson = LearningSysInfo.Lessons[i];
                 break;
@@ -33,22 +34,26 @@ public class DailyWorkListControl : MonoBehaviour
         }
         for (int i = 0; i < LearningSysInfo.Lessons.ToArray().Length; i++)
         {
-            if (LearningSysInfo.Lessons[i].CourseType == 3)
+            if (LearningSysInfo.Lessons[i].CourseType == 3 && !LearningSysInfo.Lessons[i].Learnt)
             {
                 LearningSysInfo.CurrentElectLesson = LearningSysInfo.Lessons[i];
                 break;
             }
         }
     }
-    // Update is called once per frame
+
     void Update()
-    {
-        
-    }
-    public void SetLearntClass()
     {
 
     }
+
+    public void SetLessonName()
+    {
+        Type1Name.text = LearningSysInfo.CurrentAllNeedLesson.CourseName;
+        Type2Name.text = LearningSysInfo.CurrentMajorNeedLesson.CourseName;
+        Type3Name.text = LearningSysInfo.CurrentElectLesson.CourseName;
+    }
+
     public void SetLessonData(int type)
     {
         switch(type)
@@ -101,12 +106,6 @@ public class DailyWorkListControl : MonoBehaviour
             default:break;
         }
     }
-    public void SetLessonName()
-    {
-        Type1Name.text = LearningSysInfo.CurrentAllNeedLesson.CourseName;
-        Type2Name.text = LearningSysInfo.CurrentMajorNeedLesson.CourseName;
-        Type3Name.text = LearningSysInfo.CurrentElectLesson.CourseName;
-    }
     public void SetNextLesson()
     {
         if(AllStatics.TestMode)
@@ -121,7 +120,22 @@ public class DailyWorkListControl : MonoBehaviour
                 {
                     LearningSysInfo.Lessons[i].LearnThisClass();
                 }
-            }
+            }//设置此课程为已学过
+            for(int i=0;i <LearningSysInfo.StudentCourseInfo.ToArray().Length;i++)
+            {
+                if (LearningSysInfo.StudentCourseInfo[i].StuNum==AllStatics.CurrentUser)
+                {
+                    LearningSysInfo.StudentCourseInfo[i].LearntLessons.Add
+                        (LearningSysInfo.CurrentLesson.CourseName);
+                    goto switcher;
+                }
+            }//设置当前用户已学过此课程
+            LearningSysInfo.StudentsLessons ForAddSLInfo = new LearningSysInfo.StudentsLessons { };
+            ForAddSLInfo.StuNum = AllStatics.CurrentUser;
+            ForAddSLInfo.LearntLessons = new List<string> { };
+            ForAddSLInfo.LearntLessons.Add(LearningSysInfo.CurrentLesson.CourseName);
+            ForAddSLInfo.AddIntoInfoList();
+            switcher:
             switch (LearningSysInfo.CurrentLesson.CourseType)
             {
                 case 1:

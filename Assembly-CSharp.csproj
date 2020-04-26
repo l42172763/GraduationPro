@@ -66,6 +66,7 @@
     <Compile Include="Assets\NewAssets\Scripts\ButtonSettings.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Data\DataLoad.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Data\DataSet.cs" />
+    <Compile Include="Assets\NewAssets\Scripts\In InGaming\Data\LearningSysInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\CameraController.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\Keyboardmoving.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In InGaming\Movements\NavTest.cs" />
@@ -85,7 +86,6 @@
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\LoginSettings.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In NewGame\SeeYourPassword.cs" />
     <Compile Include="Assets\NewAssets\Scripts\In StartMenu\ChangeTestMode.cs" />
-    <Compile Include="Assets\NewAssets\Scripts\LearningSysInfo.cs" />
     <Compile Include="Assets\NewAssets\Scripts\mytxtIO.cs" />
     <Compile Include="Assets\NewAssets\Scripts\NotShownOnload.cs" />
     <Compile Include="Assets\NewAssets\Scripts\UITips.cs" />
@@ -219,7 +219,6 @@
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\PreSettledAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <None Include="Assets\123girlpos.txt" />
     <None Include="Assets\2016050216girlpos.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween50.xml" />
@@ -227,7 +226,7 @@
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween46.xml" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\Documentation\Version 2.0.txt" />
-    <None Include="Assets\111girlpos.txt" />
+    <None Include="Assets\StuLesLink.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\_Documentation\How to migrate from EasyTouch 4.X.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\Readme.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DemiLib\DemiLib.xml" />
@@ -236,6 +235,7 @@
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween43.xml" />
+    <None Include="Assets\123girlpos.txt" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\Issues in button behavior (MAC).txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\RealseNotes.txt" />
@@ -244,9 +244,7 @@
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\How to migrate from EasyTouch 4.X.txt" />
-    <None Include="Assets\ClassesInfo.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\readme_DOTweenPro.txt" />
-    <None Include="Assets\2016050216LoginInfo.txt" />
     <None Include="Assets\LoginInfo.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/MiniJNUOnUpdate/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
