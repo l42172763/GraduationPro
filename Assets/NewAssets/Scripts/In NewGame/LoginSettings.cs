@@ -12,7 +12,6 @@ public class LoginSettings : MonoBehaviour
     public GameObject FailAddInfo;
     public GameObject NewInfoGetBase;
     public GameObject WhiteBackground;
-    public string InfoSaveName;
     public List<string> Infoget;
     public void CreatNew()
     {
@@ -39,17 +38,22 @@ public class LoginSettings : MonoBehaviour
     void Start()
     {
         WhiteBackground.SetActive(false);
-        InfoSaveName = "LoginInfo";
-        FileInfo file = new FileInfo(Application.dataPath + "/" + InfoSaveName + ".txt");
+        FileInfo file = new FileInfo(Application.dataPath + "/" + LocalInformation.InfoSaveName + ".txt");
         if (file.Exists)
         {
-            Infoget = mytxtIO.GetmyStringList(InfoSaveName);
+            Infoget = mytxtIO.GetmyStringList(LocalInformation.InfoSaveName);
             for(int i=0;i<Infoget.ToArray().Length;i++)
             {
                 LocalInformation.PubAllowAddInfo();
                 LocalInformation.CurrentInformation.studentNum = Infoget[i];
+                Debug.Log(LocalInformation.CurrentInformation.studentNum);
                 LocalInformation.CurrentInformation.studentMajor = Infoget[++i];
                 LocalInformation.CurrentInformation.password = Infoget[++i];
+                LocalInformation.CurrentInformation.LearntClasses = new List<string> { };
+                while (Infoget[++i]!="endInfo")
+                {
+                    LocalInformation.CurrentInformation.LearntClasses.Add(Infoget[++i]);
+                }
                 LocalInformation.StudentInfoAdd();
             }
             LocalInformation.PubRefuseAddInfo();
@@ -57,17 +61,4 @@ public class LoginSettings : MonoBehaviour
         }
     }
     
-    public void SaveData()
-    {
-        string ls;
-        for (int i=0; LocalInformation.LoadData(i); i++)
-        {
-            ls = LocalInformation.CurrentInformation.studentNum + "";
-            mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
-            ls = LocalInformation.CurrentInformation.studentMajor + "";
-            mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
-            ls = LocalInformation.CurrentInformation.password + "";
-            mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
-        }
-    }
 }

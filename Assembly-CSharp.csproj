@@ -225,7 +225,6 @@
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween50.xml" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
-    <None Include="Assets\123LoginInfo.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween46.xml" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouchControls\Documentation\Version 2.0.txt" />
     <None Include="Assets\111girlpos.txt" />
@@ -245,6 +244,7 @@
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\PreSettledAssets\EasyTouchBundle\EasyTouch\How to migrate from EasyTouch 4.X.txt" />
+    <None Include="Assets\ClassesInfo.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\readme_DOTweenPro.txt" />
     <None Include="Assets\2016050216LoginInfo.txt" />
     <None Include="Assets\LoginInfo.txt" />

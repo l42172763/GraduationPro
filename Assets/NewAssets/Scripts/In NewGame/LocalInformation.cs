@@ -7,6 +7,7 @@ public static class LocalInformation
     public static bool TestMode = false;
     public static int ScenesNumber;
     private static bool AddInfoAllowed = false;
+    public static string InfoSaveName = "LoginInfo";
     /// <summary>
     /// 有关本地信息处理
     /// </summary>
@@ -16,11 +17,30 @@ public static class LocalInformation
         public string studentMajor;//专业
         public string studentNum;//学号
         public string password;//密码
+        public int LearntClassAmount;//已学课程数
+        public List<string> LearntClasses;//已学课程
+        public int ResetAmount()
+        {
+            LearntClassAmount = LearntClasses.ToArray().Length;
+            return LearntClassAmount;
+        }
+        public int ClassAdd(string AddClass)
+        {
+            LearntClasses.Add(AddClass);
+            LearntClassAmount = LearntClasses.ToArray().Length;
+            return LearntClassAmount;
+        }
     };
-    public static UserInfo CurrentInformation;
+    public static UserInfo CurrentInformation = new UserInfo { };
     private static List<UserInfo> CurrentInformations= new List<UserInfo> { };
     private static UserInfo SavedInformation = new UserInfo//默认账户
-    { studentName = "creation", studentMajor = "信息安全", studentNum = "2016050216", password = "123" };
+    {
+        studentName = "creation",
+        studentMajor = "信息安全",
+        studentNum = "2016050216",
+        password = "123",
+        LearntClassAmount = 0
+    };
     public static int StudentInfoCheck()
     {
         if(SavedInformation.studentNum=="2016050216")//读取默认账户
@@ -41,7 +61,7 @@ public static class LocalInformation
                 && CurrentInformation.password == CurrentInformations[i].password)
                 {
                     AllStatics.CurrentUser = CurrentInformation.studentNum;
-                    Debug.Log(AllStatics.CurrentUser);
+                    Debug.Log("登录账户：" + AllStatics.CurrentUser);
                     return 2;//找到输入信息且其他属性正确，允许登陆
                 }
                 else return 1;//找到输入信息但其他属性不正确，不允许登陆
@@ -79,6 +99,13 @@ public static class LocalInformation
         if (AddInfoAllowed)//判断是否有权添加
         {
             AddInfoAllowed = false;
+            for(int i=0;i<CurrentInformations.ToArray().Length;i++)
+            {
+                if(CurrentInformations[i].studentNum==CurrentInformation.studentNum)
+                {
+                    return false;//信息重复，添加失败
+                }
+            }
             CurrentInformations.Add(CurrentInformation);
             return true;//添加成功
         }
@@ -96,6 +123,44 @@ public static class LocalInformation
             return true;
         }
         else return false;
+    }
+
+
+    public static int NewClassLearnt(string TheClass,string User)//添加新的已学课程
+    {
+        for(int i=0;i<CurrentInformations.ToArray().Length;i++)
+        {
+            if (CurrentInformations[i].studentNum == User)
+            {
+                int t = CurrentInformations[i].ResetAmount();
+                return CurrentInformations[i].ClassAdd(TheClass);
+            }
+        }
+        return -1;
+    }
+
+
+    public static void SaveData()
+    {
+        string ls;
+        for (int i = 0; i < CurrentInformations.ToArray().Length; i++)
+        {
+            ls = CurrentInformations[i].studentNum + "";
+            mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
+            ls = CurrentInformations[i].studentMajor + "";
+            mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
+            ls = CurrentInformations[i].password + "";
+            mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
+            //ls = CurrentInformations[i].LearntClassAmount + "";
+            //mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
+            for (int j = 0; j < CurrentInformations[i].LearntClasses.ToArray().Length; j++)
+            {
+                ls = CurrentInformation.LearntClasses[j] + "";
+                mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
+            }
+            ls = "endInfo";
+            mytxtIO.WriteIntoStringTxt(ls, InfoSaveName);
+        }
     }
     public static void ClearCurrents()
     {

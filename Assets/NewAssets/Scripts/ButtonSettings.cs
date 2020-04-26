@@ -46,10 +46,10 @@ public class ButtonSettings : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "NewGame":
-                GameObject.Find("LoginSettings").GetComponent<LoginSettings>().SaveData();
-                LocalInformation.ClearCurrents();
                 break;
             case "InGaming":
+                LocalInformation.SaveData();
+                LocalInformation.ClearCurrents();
                 GameObject.Find("DataSaving").GetComponent<DataSet>().SaveSituation();
                 break;
             default:break;

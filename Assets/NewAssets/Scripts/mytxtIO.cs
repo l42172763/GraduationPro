@@ -107,6 +107,20 @@ public static class mytxtIO
         ReadOut("string", txtname);
         return Allmystring;
     }
+    public static List<string> StraightString(string txtname)
+    {
+        reader = new StreamReader(Application.dataPath + "/" + txtname + ".txt", Encoding.UTF8);
+        string text;
+
+        Allmystring.Clear();
+        while ((text = reader.ReadLine()) != null)
+        {
+            Allmystring.Add(text);
+        }
+        reader.Dispose();
+        reader.Close();
+        return Allmystring;
+    }
     private static char ToSecret(char need)
     {
         if (need <= 'z' && need >= 'a')
