@@ -20,10 +20,8 @@ public class DataLoad : MonoBehaviour
     {
         LearningSysInfo.LoadSavedLinkOfSL();
         situationtxt = AllStatics.CurrentUser + "girlpos";//获取当前账户名用于设置此账户的角色位置信息存储
-        Classtxt = AllStatics.CurrentUser + "LearntClasses";//获取上述内容用于读写已学课程
         thegirl = GameObject.FindGameObjectWithTag("Local Player");
         FileInfo file = new FileInfo(Application.dataPath + "/" + situationtxt + ".txt");
-        FileInfo Class = new FileInfo(Application.dataPath + "/" + Classtxt + ".txt");
         if (file.Exists)
         {
             PosRead = true;

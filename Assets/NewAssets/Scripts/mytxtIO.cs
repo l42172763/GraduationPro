@@ -121,6 +121,28 @@ public static class mytxtIO
         reader.Close();
         return Allmystring;
     }
+
+    public static void StrightWriteIn(string message, string txtname)
+    {
+        FileInfo file = new FileInfo(Application.dataPath + "/" + txtname + ".txt");
+        if (!file.Exists)
+        {
+            writer = file.CreateText();
+        }
+        else
+        {
+            writer = file.AppendText();
+        }
+        writer.WriteLine(message);
+        writer.Flush();
+        writer.Dispose();
+        writer.Close();
+    }
+
+
+
+
+
     private static char ToSecret(char need)
     {
         if (need <= 'z' && need >= 'a')

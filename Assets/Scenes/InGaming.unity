@@ -17405,15 +17405,12 @@ MonoBehaviour:
   thegirl: {fileID: 0}
   Savedpos: {x: 0, y: 0, z: 0}
   SavedQua: {x: 0, y: 0, z: 0, w: 0}
-  myintget: 
   mystringget: []
   situationtxt: girlpos
+  Classtxt: 
   PosSettled: 1
   PosRead: 0
-  UIshow: {fileID: 1700397844410158}
   CoverImage: {fileID: 705688831}
-  UIshowIntrotxt: UIIntroduce
-  URL: 
 --- !u!114 &1168896460
 MonoBehaviour:
   m_ObjectHideFlags: 0

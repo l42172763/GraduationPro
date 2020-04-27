@@ -54,8 +54,8 @@ public class ButtonSettings : MonoBehaviour
                 break;
             case "InGaming":
                 GameObject.Find("DataSaving").GetComponent<DataSet>().SaveSituation();//存储玩家位置
-                LearningSysInfo.SaveLinkOfStuLes();
-                //还应当存储当前已学完的课程
+                LearningSysInfo.SaveLinkOfStuLes();//存储当前已学完的课程
+                LearningSysInfo.SetLocalClasses();//存储所有课程信息并方便后续修改
                 break;
             default:break;
         }

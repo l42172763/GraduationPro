@@ -37,9 +37,31 @@ public static class LearningSysInfo
     {
         Lessons.Add(ForAddLesson);
     }
+    public static void SetLocalClasses()
+    {
+        FileInfo Classes = new FileInfo(Application.dataPath + "/" + ClassFile + ".txt");
+        if (Classes.Exists)
+            Classes.Delete();//若文件存在则更新之
+        string ls;
+        for (int i = 0; i < Lessons.ToArray().Length; i++)
+        {
+            ls = Lessons[i].CourseName + "";
+            mytxtIO.StrightWriteIn(ls, ClassFile);
+            ls = Lessons[i].CourseNum + "";
+            mytxtIO.StrightWriteIn(ls, ClassFile);
+            ls = Lessons[i].CourseType + "";
+            mytxtIO.StrightWriteIn(ls, ClassFile);
+            ls = Lessons[i].ContentType + "";
+            mytxtIO.StrightWriteIn(ls, ClassFile);
+            ls = Lessons[i].Contents + "";
+            mytxtIO.StrightWriteIn(ls, ClassFile);
+            ls = Lessons[i].NextClass == null ? "null" : Lessons[i].NextClass + "";
+            mytxtIO.StrightWriteIn(ls, ClassFile);
+        }
+    }
     public static void LoadLocalClasses()
     {
-        FileInfo Classes = new FileInfo(Application.dataPath + "/" + "ClassInfo" + ".txt");
+        FileInfo Classes = new FileInfo(Application.dataPath + "/" + ClassFile + ".txt");
         if (Classes.Exists)
             AllmyClasses = mytxtIO.StraightString(ClassFile);//明文读取课程信息，若读取失败改从AllStatics中读取
         else AllmyClasses = AllStatics.DefaultClassesInfo;

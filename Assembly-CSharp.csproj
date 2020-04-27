@@ -232,6 +232,7 @@
     <None Include="Assets\PreSettledAssets\Demigiant\DemiLib\DemiLib.xml" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\PreSettledAssets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\ClassesInfo.txt" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\PreSettledAssets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\PreSettledAssets\Demigiant\DOTween\DOTween43.xml" />
